@@ -145,9 +145,12 @@ footer {
 }
 
 header {
-	position: sticky;
+	position: fixed;
 	top: 0;
-	z-index: 4;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
 }
 
 .nav {
@@ -228,34 +231,47 @@ header {
 	transition: opacity ease .2s;
 }
 
-.mobile_nav {
-	position: fixed;
-	top: 3.5rem;
-	left: 100%;
-	width: 100%;
-	height: 100vh;
-	background: #000000;
-	overflow: hidden;
-	overflow-y: scroll;
-	z-index: 4;
-	color: #ffffff;
-	display: block;
-	transition: ease .35s;
+.mobile_nav_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2;
+  transition: background-color .35s ease;
+  pointer-events: none;
 }
 
+.mobile_nav_container.show {
+  background-color: rgba(0, 0, 0, .68);
+}
 
+.mobile_nav {
+	position: absolute;
+  top: 0;
+  right: 0;
+	width: 100%;
+	height: 100vh;
+  transform: translateX(100%);
+	background: #181717;
+	overflow: hidden;
+	overflow-y: scroll;
+	color: #ffffff;
+	display: block;
+	transition: all ease .35s;
+  pointer-events: all;
+  padding: 6vh 0 0 0;
+}
+
+.mobile_nav.slide {
+  transform: translateX(0);
+  box-shadow: 0 0 1em;
+  transition: all ease .35s;
+}
 
 .noscroll {
 	overflow: hidden;
-}
-
-
-
-.slide {
-	display: block;
-	left: 0;
-/*	transform: translateY(-100vw);*/
-	transition: left ease .35s;
 }
 
 .mobile_nav ul {
@@ -275,7 +291,7 @@ header {
 /*	background: orange;*/
 	margin: 0 2em;
 	padding: 1em 0;
-	border-bottom: 2px solid #ffffff;
+	border-bottom: 2px solid #969696;
 }
 
 .mobile_nav li {
@@ -2224,6 +2240,8 @@ footer {
 	}
 }
 
-
+.disable-pointer-events {
+  pointer-events: none;
+}
 
 

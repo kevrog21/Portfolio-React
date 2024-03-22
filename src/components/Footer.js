@@ -8,26 +8,26 @@ export default function Footer() {
                     <Sprite />
 					<a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank">
                         <svg className="svg_icon_footer">
-					        <use xlinkHref="#dribbble_icon" />
+					        <use xlinkHref="#resume_icon" />
 					    </svg>
                     </a>
 					<a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank"><svg className="svg_icon_footer">
-						<use href="#linkedin_icon"></use>
+						<use xlinkHref="#linkedin_icon"></use>
 					</svg></a>
 					<a href="https://github.com/kevrog21" target="_blank"><svg className="svg_icon_footer">
-						<use href="#github_icon"></use>
+						<use xlinkHref="#github_icon"></use>
 					</svg></a>
 					<a href="https://dribbble.com/Kevrog" target="_blank"><svg className="svg_icon_footer">
-						<use href="#dribbble_icon"></use>
+						<use xlinkHref="#dribbble_icon"></use>
 					</svg></a>
 					<a href="#" className="email_el"><svg className="svg_icon_footer">
-						<use href="#email_icon"></use>
+						<use xlinkHref="#email_icon"></use>
 					</svg></a>
 
 				</div>
 				<div className="logo">
 					<a href="#top" ><svg className="logo_footer">
-						<use href="#kevrog_logo"></use>
+						<use xlinkHref="#kevrog_logo"></use>
 					</svg></a>
 				</div>
 				<div className="copyright">
