@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import SideNav from './SideNav'
 
 // const mobileNavItems = document.querySelectorAll(".m_nav_item")
@@ -16,7 +17,9 @@ import SideNav from './SideNav'
 // 	item.addEventListener("click", rotate)
 // })
 
-export default function Header() {
+export default function Header(props) {
+
+    const { scrollToSection } = props
 
     const [navMenuOpen, setNavMenuOpen] = useState(false)
 
@@ -59,15 +62,17 @@ export default function Header() {
         <div>
             <header className="bkgd_tertiary">
                 <div className="content_wrapper flex nav">
-                    <svg className="nav_logo">
+                    <Link to='/'>
+                        <svg className="nav_logo">
                             <use href="#kevrog_logo"></use>
                         </svg>
+                    </Link>
                     <h2 className="nav_name">KEVIN ROGERS</h2>
                     <nav id="intro_nav">
                         <ul id="nav_links">
-                            <li><a className="nav_item" href="#top">home</a></li>
-                            <li><a className="nav_item" href="#project_section">projects</a></li>
-                            <li><a className="nav_item" href="#about_section">about me</a></li>
+                            <li><a className="nav_item" onClick={() => scrollToSection('above_fold')}>home</a></li>
+                            <li><a className="nav_item" onClick={() => scrollToSection('project_section')}>projects</a></li>
+                            <li><a className="nav_item" onClick={() => scrollToSection('about_section')}>about me</a></li>
                         </ul>
                     </nav>
                     <div className={`hamburger_div ${navMenuOpen && 'rotate'}`}>
@@ -80,6 +85,7 @@ export default function Header() {
                 setNavMenuOpen={setNavMenuOpen}
                 showAndDisableSideNav={showAndDisableSideNav}
                 handleNavItemClick={handleNavItemClick}
+                scrollToSection={scrollToSection}
             />
         </div>
     )
