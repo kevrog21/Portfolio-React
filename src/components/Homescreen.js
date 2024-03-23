@@ -26,7 +26,7 @@ export default function Homescreen(props) {
                 <div className="content_wrapper flex">
                     <div className="intro_content" id="intro_grid">
                             <div className="intro_text">
-                                <h1>Graphic Designer <div className="amp_wrap"><div className="amp">&amp;<div className="amp2">&amp;</div></div></div> &nbsp;<br/> Web Developer</h1>
+                                <h1>Graphic Designer <div className="amp_wrap"><div className="amp">&amp;</div></div> &nbsp;<br/> Web Developer</h1>
                                 <p>based in Phoenix, AZ</p>
                             </div>
                             <div className="logo_animation">
@@ -96,33 +96,33 @@ export default function Homescreen(props) {
                             <p className="proj_type">Graphic Design</p>
                             <div className="project_card_wrapper">
                                 <div className="card">
-                                    <Link to='/poster'><a>
+                                    <Link to='/poster'>
                                         <div className="img_container">
                                             <img className="proj_img" src={jazzPosterMockup} alt="thumbnail image for my concert poster project; It shows a red poster on a gray brick wall" loading="lazy" />
                                         </div>
-                                    </a></Link>
+                                    </Link>
                                     <div className="proj_title">
-                                        <Link to='/poster'><a className="proj_title"><p>Concert Poster</p></a></Link>
+                                        <Link to='/poster' className="proj_title"><p>Concert Poster</p></Link>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="pages/chewybrew.html">
+                                    <Link to='/chewybrew'>
                                         <div className="img_container">
                                             <img className="proj_img" src={tatooCanMockup} alt="thumbnail image for my chewy brew Co project; It shows a purple beer can in front of a pink wall" loading="lazy" />
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div className="proj_title">
-                                        <a className="proj_title" href="pages/chewybrew.html"><p>Chewy Brew Co.</p></a>
+                                        <Link to='/chewybrew' className="proj_title"><p>Chewy Brew Co.</p></Link>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="pages/flying_nickel.html">
+                                    <Link to='/flying-nickel'>
                                         <div className="img_container">
                                             <img className="proj_img" src={flyingNickelMockup} alt="thumbnail image for my flying nickel logo design project; It shows a white logo that resembles the letter F in front of a blue purple background." loading="lazy" />
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div className="proj_title">
-                                        <a className="proj_title" href="pages/flying_nickel.html"><p>Flying Nickel</p></a>
+                                        <Link to='/flying-nickel' className="proj_title"><p>Flying Nickel</p></Link>
                                     </div>
                                 </div>
                             </div>
@@ -131,33 +131,33 @@ export default function Homescreen(props) {
                             <p className="proj_type">Web Development</p>
                             <div className="project_card_wrapper">
                                 <div className="card">
-                                    <a href="pages/daily_checklist.html">
+                                    <Link to='/daily-checklist'>
                                         <div className="img_container">
                                             <img className="proj_img" src={dailyChecklistMockup} alt="thumbnail image for my checklist website project; It shows a desktop version of the website's interface which is a little farm illustration with a white form overlayed on top." loading="lazy" />
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div className="proj_title">
-                                        <a className="proj_title" href="pages/daily_checklist.html"><p>Daily Checklist</p></a>
+                                        <Link to='/daily-checklist' className="proj_title"><p>Daily Checklist</p></Link>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="pages/this_website.html">
+                                    <Link to='/this-website'>
                                         <div className="img_container">
                                             <img className="proj_img" src={thisWebsiteMockup} alt="thumbnail image for this website; It shows a smaller version of the website's interface on a laptop and phone" loading="lazy" />
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div className="proj_title">
-                                        <a className="proj_title" href="pages/this_website.html"><p>This Website</p></a>
+                                        <Link to='/this-website' className="proj_title"><p>This Website</p></Link>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="pages/chores_placeholder.html">
+                                    <Link to='/chores-app'>
                                         <div className="img_container">
                                             <img className="proj_img" src={choreWebsiteMockup} alt="thumbnail image for my chore website interface; It shows a smaller version of the website's interface on a phone." loading="lazy" />
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div className="proj_title">
-                                        <a className="proj_title" href="pages/chores_placeholder.html"><p>Chores App</p></a>
+                                        <Link to='/chores-app' className="proj_title"><p>Chores App</p></Link>
                                     </div>
                                 </div>
                             </div>

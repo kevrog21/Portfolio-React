@@ -2,7 +2,7 @@
 
 export default function SideNav(props) {
 
-    const { navMenuOpen, setNavMenuOpen, showAndDisableSideNav, handleNavItemClick, scrollToSection } = props
+    const { navMenuOpen, setNavMenuOpen, showAndDisableSideNav, handleNavItemClick } = props
 
     function closeNavMenu() {
         setNavMenuOpen(false)
