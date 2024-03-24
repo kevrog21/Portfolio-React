@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ReactComponent as Sprite } from './SvgSprite.svg'
 
 export default function Footer() {
@@ -26,13 +27,13 @@ export default function Footer() {
 
 				</div>
 				<div className="logo">
-					<a href="#top" ><svg className="logo_footer">
+					<Link to='/' ><svg className="logo_footer">
 						<use xlinkHref="#kevrog_logo"></use>
-					</svg></a>
+					</svg></Link>
 				</div>
 				<div className="copyright">
 					<div>
-						<p>&copy; <span className="current_year"></span> Kevin Rogers</p>
+						<p>&copy; <span className="current_year">{new Date().getFullYear()}</span> Kevin Rogers</p>
 					</div>
 					<div>
 						<a href="#" className="email_el"><p>contact me</p></a>

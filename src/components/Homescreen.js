@@ -35,20 +35,20 @@ export default function Homescreen(props) {
                             </div>
                             <div className="icon_container">
                                 <div className="icon_list_right">
-                                    <a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#linkedin_icon"></use>
                                         </svg>
                                         <div className="label_wrap"><p className="icon_label">LinkedIn</p></div></a>
-                                    <a href="https://github.com/kevrog21" target="_blank">
+                                    <a href="https://github.com/kevrog21" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#github_icon"></use>
                                         </svg><div className="label_wrap"><p className="icon_label">github</p></div></a>
-                                    <a href="https://dribbble.com/Kevrog" target="_blank">
+                                    <a href="https://dribbble.com/Kevrog" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#dribbble_icon"></use>
                                         </svg><div className="label_wrap"><p className="icon_label">dribbble</p></div></a>
-                                    <a href="#" target="_blank" className="email_el">
+                                    <a href="#" target="_blank" className="email_el" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#email_icon"></use>
                                         </svg><div className="label_wrap"><p className="icon_label">email</p></div></a>
@@ -57,21 +57,21 @@ export default function Homescreen(props) {
                             <div className="column_left">
                                 <div className="vertical_line"></div>
                                 <div className="icon_list_left">
-                                    <a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/hirekevinrogers/" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#linkedin_icon"></use>
                                         </svg>
                                     </a>
-                                    <a href="https://github.com/kevrog21" target="_blank">
+                                    <a href="https://github.com/kevrog21" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#github_icon"></use>
                                         </svg>
                                     </a>
-                                    <a href="https://dribbble.com/Kevrog" target="_blank">
+                                    <a href="https://dribbble.com/Kevrog" target="_blank" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#dribbble_icon"></use>
                                         </svg></a>
-                                    <a href="#" target="_blank" className="email_el">
+                                    <a href="#" target="_blank" className="email_el" rel="noreferrer">
                                         <svg className="svg_icon_main">
                                             <use href="#email_icon"></use>
                                         </svg></a>
@@ -164,7 +164,7 @@ export default function Homescreen(props) {
                         </div>
                     </div>
                 </div>
-                <a className="no_decoration" href="pages/more_work.html"><p id="more_work">see more work</p></a>
+                <Link to='/more-work' className="no_decoration"><p id="more_work">see more work</p></Link>
             </section>
             
             <section id="about_section">
