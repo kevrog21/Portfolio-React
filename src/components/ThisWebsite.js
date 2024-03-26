@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import BackButton from './BackButton'
 
 import backArrow from '../media/back_arrow.svg'
 import downArrows from '../media/arrows_down_orange.svg'
@@ -31,9 +32,7 @@ export default function ThisWebsite(props) {
 					<div className="overview_content" id="project_grid">
 
 						<div className="project_body">
-							<div className="back_button">
-								<a href=""><img src={backArrow} alt="back arrow"/></a>
-							</div>
+							<BackButton />
 							<div className="project_heading">
 								<p>This<br/>Website</p>
 							</div>
@@ -68,7 +67,7 @@ export default function ThisWebsite(props) {
 						
 
 								<div className="project_img insight_img img_left">
-									<video autoPlay muted loop defaultMuted playsinline width="550px"> 
+									<video autoPlay muted loop playsInline width="550px"> 
 										<source src={imageZoomDemo} type="video/mp4"/>
 									</video>
 								</div>
@@ -81,7 +80,7 @@ export default function ThisWebsite(props) {
 								</div>
 								
 								<div className="project_img insight_img img_right">
-									<video autoPlay muted loop defaultMuted playsinline width="550px"> 
+									<video autoPlay muted loop playsInline width="550px"> 
 										<source src={intersectionObserverDemo} type="video/mp4"/>
 									</video>
 								</div>

@@ -235,7 +235,7 @@ header {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 2;
+  z-index: 3;
   transition: background-color .35s ease;
   pointer-events: none;
 }
@@ -246,19 +246,20 @@ header {
 
 .mobile_nav {
 	position: absolute;
-  top: 0;
-  right: 0;
+	top: 0;
+	right: 0;
 	width: 100%;
 	height: 100vh;
-  transform: translateX(100%);
+	transform: translateX(100%);
 	background: #181717;
 	overflow: hidden;
 	overflow-y: scroll;
 	color: #ffffff;
 	display: block;
 	transition: all ease .35s;
-  pointer-events: all;
-  padding: 6vh 0 0 0;
+	pointer-events: all;
+	padding: 6vh 0 0 0;
+	
 }
 
 .mobile_nav.slide {
@@ -341,6 +342,9 @@ header {
 	opacity: 0%;
 }
 
+#above_fold {
+	padding: 8vh 0 0 0;
+}
 
 #intro_grid {
 	display: grid;
@@ -426,7 +430,6 @@ header {
 	position: sticky;
 	top: 7.4vh;
 	transition: all .5s ease;
-	z-index: 2;
 }
 
 .section_header p {
@@ -480,6 +483,7 @@ header {
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
 	margin: 1em auto;
+	cursor: pointer;
 }
 
 /*
@@ -516,6 +520,7 @@ header {
 	width: 1.5em;
 	margin: 0 auto;
 	transition: opacity ease 1s;
+	z-index: 2;
 }
 
 
@@ -1032,6 +1037,10 @@ footer {
 		display: flex;
 		text-transform: uppercase;
 		font-size: .8rem;
+	}
+
+	.nav_item {
+		cursor: pointer;
 	}
 	
 	.active {
@@ -2464,4 +2473,6 @@ footer {
   pointer-events: none;
 }
 
-
+.no_padding {
+	padding: 0 0 0 0;
+}

@@ -22,6 +22,8 @@ export default function Header(props) {
     const { scrollToSection } = props
 
     const [navMenuOpen, setNavMenuOpen] = useState(false)
+    const [activeNavItem, setActiveNavItem] = useState(0)
+
 
     function showAndDisableSideNav() {
         const container = document.querySelector('.mobile_nav_container')
@@ -70,9 +72,30 @@ export default function Header(props) {
                     <h2 className="nav_name">KEVIN ROGERS</h2>
                     <nav id="intro_nav">
                         <ul id="nav_links">
-                            <li><a className="nav_item" onClick={() => scrollToSection('above_fold')}>home</a></li>
-                            <li><a className="nav_item" onClick={() => scrollToSection('project_section')}>projects</a></li>
-                            <li><a className="nav_item" onClick={() => scrollToSection('about_section')}>about me</a></li>
+                            <li>
+                                <a 
+                                    className={`nav_item ${activeNavItem === 0 ? 'active' : ''}`}
+                                    onClick={() => {
+                                        scrollToSection('above_fold')
+                                        setActiveNavItem(0)
+                                    }}>home</a>
+                            </li>
+                            <li>
+                                <a 
+                                    className={`nav_item ${activeNavItem === 1 ? 'active' : ''}`} 
+                                    onClick={() => {
+                                        scrollToSection('project_section')
+                                        setActiveNavItem(1)
+                                    }}>projects</a>
+                            </li>
+                            <li>
+                                <a 
+                                    className={`nav_item ${activeNavItem === 2 ? 'active' : ''}`}
+                                    onClick={() => {
+                                        scrollToSection('about_section')
+                                        setActiveNavItem(2)
+                                    }}>about me</a>
+                            </li>
                         </ul>
                     </nav>
                     <div className={`hamburger_div ${navMenuOpen && 'rotate'}`} onClick={handleMenuToggle}>

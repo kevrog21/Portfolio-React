@@ -21,7 +21,7 @@ export default function Homescreen(props) {
     const { scrollToSection } = props
 
     return (
-        <main>
+        <main className='no_padding'>
             <section id="above_fold">
                 <div className="content_wrapper flex">
                     <div className="intro_content" id="intro_grid">

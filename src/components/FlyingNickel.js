@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import BackButton from './BackButton'
 
 import backArrow from '../media/back_arrow.svg'
 import downArrows from '../media/arrows_down_orange.svg'
@@ -31,9 +32,7 @@ export default function FlyingNickel(props) {
 					<div className="overview_content" id="project_grid">
 
 						<div className="project_body">
-							<div className="back_button">
-								<a href=""><img src={backArrow} alt="back arrow"/></a>
-							</div>
+							<BackButton />
 							<div className="project_heading">
 								<p>Flying <br/>Nickel</p>
 							</div>

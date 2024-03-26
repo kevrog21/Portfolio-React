@@ -1,3 +1,4 @@
+import BackButton from './BackButton'
 import backArrow from '../media/back_arrow.svg'
 import downArrows from '../media/arrows_down_orange.svg'
 import bathroomLavendarArt from '../media/more_work/bathroom_lavender_art.jpg'
@@ -29,9 +30,7 @@ export default function MoreWork() {
 					<div className="overview_content" id="project_grid">
 
 						<div className="project_body">
-							<div className="back_button">
-								<a href=""><img src={backArrow}/></a>
-							</div>
+							<BackButton />
 								<p className="mw_title">More Work</p>
 								<p className="mw_intro_text">Here's some work that's a little less relevant to my current projects, but were important to my design journey.</p>
 								

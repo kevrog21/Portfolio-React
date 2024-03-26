@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import BackButton from './BackButton'
 
 import backArrow from '../media/back_arrow.svg'
 import chewyBrewPurple from '../media/tatooed_can_mockup_purp.jpg'
@@ -29,9 +30,7 @@ export default function ChewyBrew(props) {
                 <div className="overview_content" id="project_grid">
 
                     <div className="project_body">
-                        <div className="back_button">
-                            <a href=""><img src={backArrow} alt="back arrow"/></a>
-                        </div>
+                        <BackButton />
                         <div className="project_heading">
                             <p>Chewy<br/> Brew<br/> Co.</p>
                         </div>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import BackButton from './BackButton'
 
 import backArrow from '../media/back_arrow.svg'
 import posterMockup from '../media/jazz_poster_mockup_red.jpg'
@@ -31,9 +32,7 @@ export default function Poster(props) {
                     <div className="overview_content" id="project_grid">
 
                         <div className="project_body">
-                            <div className="back_button">
-                                <a href=""><img src={backArrow} alt="back arrow"/></a>
-                            </div>
+                            <BackButton />
                             <div className="project_heading">
                                 <p>Concert Poster</p>
                             </div>
