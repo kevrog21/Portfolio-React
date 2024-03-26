@@ -33,15 +33,15 @@ export default function Header(props) {
                 container.classList.add('show')
                 navMenu.classList.add('slide')
                 mainEl.classList.add('disable-pointer-events')
-                document.documentElement.style.overflow = 'hidden'
+                // document.documentElement.style.overflow = 'hidden'
                 document.body.style.overflow = 'hidden'
                 
             } else {
                 container.classList.remove('show')
                 navMenu.classList.remove('slide')
                 mainEl.classList.remove('disable-pointer-events')
-                document.documentElement.style.overflow = ''
-                document.body.style.overflow = ''
+                // document.documentElement.style.overflow = ''
+                document.body.style.overflow = 'auto'
             }
         }
     }
@@ -75,8 +75,8 @@ export default function Header(props) {
                             <li><a className="nav_item" onClick={() => scrollToSection('about_section')}>about me</a></li>
                         </ul>
                     </nav>
-                    <div className={`hamburger_div ${navMenuOpen && 'rotate'}`}>
-                        <div className={`hamburger_lines`} onClick={handleMenuToggle}></div>
+                    <div className={`hamburger_div ${navMenuOpen && 'rotate'}`} onClick={handleMenuToggle}>
+                        <div className={`hamburger_lines`}></div>
                     </div>
                 </div>
             </header>
