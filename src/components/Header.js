@@ -1,29 +1,27 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import SideNav from './SideNav'
-
-// const mobileNavItems = document.querySelectorAll(".m_nav_item")
-// const hamburger = document.querySelector(".hamburger_div")
-// const mobileNav = document.querySelector(".mobile_nav")
-
-// hamburger.addEventListener("click", rotate)
-// function rotate() {
-// 	hamburger.classList.toggle("rotate")
-// 	mobileNav.classList.toggle("slide")
-// 	document.body.classList.toggle("noscroll")
-// }
-
-// mobileNavItems.forEach(item => {
-// 	item.addEventListener("click", rotate)
-// })
 
 export default function Header(props) {
 
-    const { scrollToSection } = props
+    const { scrollToSection, selectedSection, setSelectedSection, activeNavItem, setActiveNavItem } = props
 
     const [navMenuOpen, setNavMenuOpen] = useState(false)
-    const [activeNavItem, setActiveNavItem] = useState(0)
+    
+    
 
+    const location = useLocation()
+
+    useEffect(() => {
+        if (location.pathname !== '/') {
+            
+            console.log('heres the active nav', activeNavItem)
+        }
+
+        console.log('mounted component')
+
+        console.log(selectedSection)
+    }, [])
 
     function showAndDisableSideNav() {
         const container = document.querySelector('.mobile_nav_container')
@@ -48,6 +46,60 @@ export default function Header(props) {
         }
     }
 
+    const NavLinkToHome = ({ to, sectionId, title, navIndex, children }) => {
+        return (
+            location.pathname !== '/' ?
+                <NavLink 
+                    to={to}
+                    className={`nav_item ${activeNavItem === navIndex ? 'active' : ''}`}
+                    onClick={() => {
+                        console.log(sectionId, 'was clicked')
+                        setActiveNavItem(navIndex)
+                        setSelectedSection(sectionId)
+                    }}
+                >
+                    {title}
+                </NavLink>
+                :
+                <a 
+                    className={`nav_item ${activeNavItem === navIndex ? 'active' : ''}`}
+                    onClick={() => {
+                        handleNavItemClick(sectionId)
+                        setActiveNavItem(navIndex)
+                        setSelectedSection(sectionId)
+                    }}>{title}</a>
+        )
+    }
+
+    // const handleNavItemClick = (sectionId) => {
+    //     if (location.pathname !== '/') {
+    //         setTimeout(() => {
+    //             window.location.href = '/'
+    //             window.addEventListener('popstate', () => {
+    //                 scrollToSection(sectionId)
+    //             })
+    //         }, 0)
+    //     } else {
+    //         scrollToSection(sectionId)
+    //     }
+    //     setNavMenuOpen(false)
+    // }
+
+    const handleNavItemClick = (sectionId) => {
+        if (location.pathname !== '/') {
+
+            window.location.href = '/'
+            scrollToSection(sectionId)
+        }
+        scrollToSection(sectionId)
+        setNavMenuOpen(false)
+    }
+
+    const handleNavLogoClick = () => {
+        setActiveNavItem(0)
+        setSelectedSection('above_fold')
+    }
+
     useEffect(() => {
         showAndDisableSideNav()
     }, [navMenuOpen])
@@ -56,15 +108,11 @@ export default function Header(props) {
         setNavMenuOpen((prevIsNavMenuOpen) => !prevIsNavMenuOpen)
     }
 
-    const handleNavItemClick = () => {
-        setNavMenuOpen(false)
-    }
-
     return (
         <div>
             <header className="bkgd_tertiary">
                 <div className="content_wrapper flex nav">
-                    <Link to='/'>
+                    <Link to='/' onClick={handleNavLogoClick}>
                         <svg className="nav_logo">
                             <use href="#kevrog_logo"></use>
                         </svg>
@@ -73,28 +121,34 @@ export default function Header(props) {
                     <nav id="intro_nav">
                         <ul id="nav_links">
                             <li>
-                                <a 
-                                    className={`nav_item ${activeNavItem === 0 ? 'active' : ''}`}
-                                    onClick={() => {
-                                        scrollToSection('above_fold')
-                                        setActiveNavItem(0)
-                                    }}>home</a>
+                                <NavLinkToHome
+                                    to='/'
+                                    sectionId={'above_fold'}
+                                    activeNavItem={activeNavItem}
+                                    setActiveNavItem={setActiveNavItem}
+                                    navIndex={0}
+                                    title={'home'}
+                                ></NavLinkToHome>
                             </li>
                             <li>
-                                <a 
-                                    className={`nav_item ${activeNavItem === 1 ? 'active' : ''}`} 
-                                    onClick={() => {
-                                        scrollToSection('project_section')
-                                        setActiveNavItem(1)
-                                    }}>projects</a>
+                                <NavLinkToHome
+                                    to='/'
+                                    sectionId={'project_section'}
+                                    activeNavItem={activeNavItem}
+                                    setActiveNavItem={setActiveNavItem}
+                                    navIndex={1}
+                                    title={'projects'}
+                                ></NavLinkToHome>
                             </li>
                             <li>
-                                <a 
-                                    className={`nav_item ${activeNavItem === 2 ? 'active' : ''}`}
-                                    onClick={() => {
-                                        scrollToSection('about_section')
-                                        setActiveNavItem(2)
-                                    }}>about me</a>
+                                <NavLinkToHome
+                                        to='/'
+                                        sectionId={'about_section'}
+                                        activeNavItem={activeNavItem}
+                                        setActiveNavItem={setActiveNavItem}
+                                        navIndex={2}
+                                        title={'about me'}
+                                    ></NavLinkToHome>
                             </li>
                         </ul>
                     </nav>
@@ -109,6 +163,10 @@ export default function Header(props) {
                 showAndDisableSideNav={showAndDisableSideNav}
                 handleNavItemClick={handleNavItemClick}
                 scrollToSection={scrollToSection}
+                activeNavItem={activeNavItem}
+                setActiveNavItem={setActiveNavItem}
+                NavLinkToHome={NavLinkToHome}
+                setSelectedSection={setSelectedSection}
             />
         </div>
     )

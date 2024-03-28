@@ -17,12 +17,16 @@ import Footer from './components/Footer';
 function App() {
 
   const [allInsightCards, setAllInsightCards] = useState(null)
+  const [selectedSection, setSelectedSection] = useState()
+  const [activeNavItem, setActiveNavItem] = useState(null)
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
     if (section) {
       section.scrollIntoView({behavior: 'smooth'})
       console.log(section)
+    } else {
+      console.log('that section isnt painted to screen')
     }
   }
 
@@ -52,6 +56,11 @@ function App() {
     }, [allInsightCards])
   }
 
+  //add email address (in JS to avoid email scrapers) using setAttribute
+  const emailEl = document.querySelectorAll('.email_el')
+  const email = 'kev@kevrog.com'
+
+  emailEl.forEach( element => element.setAttribute("href", `mailto:${email}`))
   // const [allProjectImages, setAllProjectImages] = useState(null)
 
   // const bodyEl = document.querySelector("body")
@@ -144,12 +153,19 @@ function App() {
       <Router>
         <Header 
           scrollToSection={scrollToSection}
+          selectedSection={selectedSection}
+          setSelectedSection={setSelectedSection}
+          activeNavItem={activeNavItem}
+          setActiveNavItem={setActiveNavItem}
         />
         <ScrollToTop />
         <Routes>
           <Route exact path="/" element={
             <Homescreen 
               scrollToSection={scrollToSection}
+              selectedSection={selectedSection}
+              activeNavItem={activeNavItem}
+              setActiveNavItem={setActiveNavItem}
           /> } />
           <Route exact path="/poster" element={
             <Poster 

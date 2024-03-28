@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import mountainsSvg from '../media/homepage_mountains.svg'
 import cactiDude from '../media/cacti_character_1.gif'
@@ -18,7 +19,60 @@ import marketingIcon from '../media/BS_icon.svg'
 
 export default function Homescreen(props) {
 
-    const { scrollToSection } = props
+    const { scrollToSection, selectedSection, activeNavItem, setActiveNavItem } = props
+
+    useEffect(() => {
+
+        const navElementsArray = document.querySelectorAll(".nav_item")
+        const allSections = document.querySelectorAll("section")
+        const mobileNavList = document.querySelectorAll(".m_nav_item")
+        const abvFoldArrows = document.querySelector(".downward_arrows2")
+
+        console.log( 'mobile nav list here : ', mobileNavList)
+
+        const topOptions = {
+            threshold: .4,
+        }
+    
+        const topObserver = new IntersectionObserver (function(entries, topObserver) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    if (entry.target.id === "above_fold") {
+                        setActiveNavItem(0)
+                        navElementsArray.forEach(item => item.classList.remove("active"))
+                        navElementsArray[0].classList.add("active")
+                        mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
+                        mobileNavList[0].firstElementChild.classList.add("active")
+                        abvFoldArrows.classList.remove("fade")
+                        console.log('running intersection observer')
+                    } else if (entry.target.id === "project_section") {
+                        setActiveNavItem(1)
+                        navElementsArray.forEach(item => item.classList.remove("active"))
+                        navElementsArray[1].classList.add("active")
+                        abvFoldArrows.classList.add("fade")
+                        mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
+                        mobileNavList[1].firstElementChild.classList.add("active")
+                        console.log('running intersection observer')
+                    } else if (entry.target.id === "about_section") {
+                        setActiveNavItem(2)
+                        navElementsArray.forEach(item => item.classList.remove("active"))
+                        navElementsArray[2].classList.add("active")
+                        mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
+                        mobileNavList[2].firstElementChild.classList.add("active")
+                        console.log('running intersection observer')
+                    }
+                }
+            })
+        }, topOptions)
+    
+        allSections.forEach(section => {
+            topObserver.observe(section)
+        })
+
+        scrollToSection(selectedSection)
+        console.log('selected section', selectedSection)
+
+    }, [])
 
     return (
         <main className='no_padding'>
