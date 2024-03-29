@@ -12,7 +12,7 @@ import downArrows from '../media/arrows_down_orange.svg'
 
 export default function ChewyBrew(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -37,7 +37,7 @@ export default function ChewyBrew(props) {
                         <div className="project_content">
                             <div className="feature_overview_container">
                                 <div  className="project_img feature_img">
-                                    <img src={chewyBrewPurple} alt="A tatooed arm holding a purple beer can in front of a pink background."/>
+                                    <img src={chewyBrewPurple} onClick={handleImgClick} alt="A tatooed arm holding a purple beer can in front of a pink background."/>
                                 </div>
                                 <div className="project_overview">
                                     <div className="overview_title">
@@ -48,7 +48,7 @@ export default function ChewyBrew(props) {
                                 </div>
                             </div>
                             <div className="project_img insight_img img_no_border zoom_background_light img_left">
-                                <img src={chewyBrewLogo} alt="Image of the logo - it is graffiti style letters with colorful outlines in front of a black and white illustration of the Flatiron Mountains with colorful stars above."/>
+                                <img src={chewyBrewLogo} onClick={handleImgClick} alt="Image of the logo - it is graffiti style letters with colorful outlines in front of a black and white illustration of the Flatiron Mountains with colorful stars above."/>
                             </div>
 
                             <div className="project_insight insight_right">
@@ -59,7 +59,7 @@ export default function ChewyBrew(props) {
                             </div>
 
                             <div className="project_img insight_img img_right">
-                                <img src={chewyBrewBlondeAle} alt="An image of the label for the blonde beer called platinum blonde - the label has wavy lines of yellow and sits in front of an orange background."/>
+                                <img src={chewyBrewBlondeAle} onClick={handleImgClick} alt="An image of the label for the blonde beer called platinum blonde - the label has wavy lines of yellow and sits in front of an orange background."/>
                             </div>
 
                             <div className="project_insight">
@@ -70,7 +70,7 @@ export default function ChewyBrew(props) {
                             </div>
 
                             <div className="project_img insight_img img_left">
-                                <img src={chewyBrewAllCans} alt="An image of all four beer cans lined up in front of a bright blue background. From left to right the cans are red head (with a red label) platinum blonde (with a yellow label) It's Pretty Awesome (with a green label) and Tall dark and handsome (with a purple label)"/>
+                                <img src={chewyBrewAllCans} onClick={handleImgClick} alt="An image of all four beer cans lined up in front of a bright blue background. From left to right the cans are red head (with a red label) platinum blonde (with a yellow label) It's Pretty Awesome (with a green label) and Tall dark and handsome (with a purple label)"/>
                             </div>
 
                             <div className="project_insight insight_right">

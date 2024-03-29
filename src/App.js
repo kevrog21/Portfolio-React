@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop'
 import Homescreen from './components/Homescreen';
+import FullScreenImage from './components/FullScreenImage'
 import Poster from './components/Poster'
 import ChewyBrew from './components/ChewyBrew';
 import FlyingNickel from './components/FlyingNickel';
@@ -19,6 +20,25 @@ function App() {
   const [allInsightCards, setAllInsightCards] = useState(null)
   const [selectedSection, setSelectedSection] = useState()
   const [activeNavItem, setActiveNavItem] = useState(null)
+
+  const [activeFullScreenImg, setActiveFullScreenImg] = useState(false)
+  const [fullScreenImgUrl, setFullScreenImgUrl] = useState(null)
+  const [lightBackground, setLightBackground] = useState(false)
+
+  useEffect(() => {
+    if (fullScreenImgUrl) {
+      console.log('this url should be showing ', fullScreenImgUrl)
+      setActiveFullScreenImg(true)
+    }
+  }, [fullScreenImgUrl])
+
+  useEffect(() => {
+    if (activeFullScreenImg) {
+      document.body.classList.add('no-scroll-active')
+    } else {
+      document.body.classList.remove('no-scroll-active')
+    }
+  }, [activeFullScreenImg])
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
@@ -61,95 +81,21 @@ function App() {
   const email = 'kev@kevrog.com'
 
   emailEl.forEach( element => element.setAttribute("href", `mailto:${email}`))
-  // const [allProjectImages, setAllProjectImages] = useState(null)
 
-  // const bodyEl = document.querySelector("body")
-  // const projectImg = document.querySelectorAll(".project_img")
-  // const moreWorkHeroImgWrapper = document.querySelectorAll(".mw_hero_img_wrapper")
-  // const moreWorkInsightImgWrapper = document.querySelectorAll(".mw_insight_img_wrapper")
-
-
-  // projectImg.forEach(img => {
-  //   img.addEventListener("click", () => {
-  //     img.classList.toggle("zoom_active")
-  //     // check if zoom is active or inactive
-  //     if (!img.classList.value.includes("zoom_active")) {
-  //       bodyEl.classList.remove("noscroll")
-        
-  //       if (img.nextElementSibling) {
-  //         img.nextElementSibling.style.marginTop = "0"
-  //       } else {
-  //         img.previousElementSibling.style.marginBottom = "0"
-  //       }
-        
-  //       // add padding to top or bottom to prevent other elements shifting
-  // //			console.log("zoom actived")
-  // //			if (img.nextElementSibling) {
-  // //				img.nextElementSibling.style.marginTop = `${selectedImgHeight}px`
-  // //			} else {img.previousElementSibling.style.marginBottom = `${selectedImgHeight}px`
-  // //				}
-  // //			projectContent.style.paddingTop = `${selectedImgHeight}px`
-  // //		} else {
-  // //			// remove project content padding
-  // ////			console.log("zoom deactived")
-  // //			if (img.nextElementSibling) {
-  // //				img.nextElementSibling.style.marginTop = "0"
-  // //			} else {img.previousElementSibling.style.marginBottom = "0"
-  // //				
-  // //			}
-  //     } else {
-  //       bodyEl.classList.add("noscroll")
-        
-  //     }
-  //   })
-  // })
-
-
-  // //maybe add mw_zoom_actie styles
-
-
-  // moreWorkHeroImgWrapper.forEach(img => {
-  //   img.addEventListener("click", () => {
-  //     img.classList.toggle("zoom_active")
-  //     // check if zoom is active or inactive
-  //     if (!img.classList.value.includes("zoom_active")) {
-  // //			bodyEl.classList.remove("noscroll")
-        
-  //       if (img.nextElementSibling) {
-  //         img.nextElementSibling.style.marginTop = "0"
-  //       } else {
-  //         img.previousElementSibling.style.marginBottom = "0"
-  //       }
-        
-  //     } else {
-        
-        
-  //     }
-  //   })
-  // })
-
-  // moreWorkInsightImgWrapper.forEach(img => {
-  //   img.addEventListener("click", () => {
-  //     img.classList.toggle("zoom_active")
-  //     // check if zoom is active or inactive
-  //     if (!img.classList.value.includes("zoom_active")) {
-  // //			bodyEl.classList.remove("noscroll")
-        
-  //       if (img.nextElementSibling) {
-          
-  //       } else {
-          
-  //       }
-        
-  //     } else {
-        
-        
-  //     }
-  //   })
-  // })
+  const handleImgClick = (event) => {
+    const src = event.target.src
+    const parentClassList = event.target.parentNode.classList
+    setFullScreenImgUrl(src)
+    setActiveFullScreenImg(true)
+    if (parentClassList.contains('zoom_background_light')) {
+        setLightBackground(true)
+    } else {
+        setLightBackground(false)
+    }
+}
 
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
         <Header 
           scrollToSection={scrollToSection}
@@ -157,8 +103,17 @@ function App() {
           setSelectedSection={setSelectedSection}
           activeNavItem={activeNavItem}
           setActiveNavItem={setActiveNavItem}
+          setActiveFullScreenImg={setActiveFullScreenImg}
         />
         <ScrollToTop />
+        {activeFullScreenImg && fullScreenImgUrl && 
+          <FullScreenImage 
+            key={fullScreenImgUrl}
+            imgUrl={fullScreenImgUrl} 
+            setActiveFullScreenImg={setActiveFullScreenImg}
+            lightBackground={lightBackground}
+          />}
+        
         <Routes>
           <Route exact path="/" element={
             <Homescreen 
@@ -172,6 +127,8 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/chewybrew" element={
@@ -179,6 +136,8 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/flying-nickel" element={
@@ -186,6 +145,8 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/daily-checklist" element={
@@ -193,6 +154,8 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/this-website" element={
@@ -200,6 +163,8 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/chores-app" element={
@@ -207,11 +172,14 @@ function App() {
               useIntersectionObserver={useIntersectionObserver}
               setAllInsightCards={setAllInsightCards}
               allInsightCards={allInsightCards}
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
           <Route exact path="/more-work" element={
             <MoreWork 
-              
+              setActiveNavItem={setActiveNavItem}
+              handleImgClick={handleImgClick}
             /> }
           />
         </Routes>

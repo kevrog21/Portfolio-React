@@ -14,7 +14,9 @@ import oldPortfolioDesign2 from '../media/old_portfolio_design_v2.jpg'
 
 export default function ThisWebsite(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
+
+	setActiveNavItem(1)
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -39,7 +41,7 @@ export default function ThisWebsite(props) {
 							<div className="project_content">
 								<div className="feature_overview_container">
 									<div  className="project_img feature_img">
-										<img src={thisWebsiteHero} alt="Hero image for this website; It shows a smaller version of the website's interface on a laptop and phone."/>
+										<img src={thisWebsiteHero} onClick={handleImgClick} alt="Hero image for this website; It shows a smaller version of the website's interface on a laptop and phone."/>
 									</div>
 									<div className="project_overview">
 										<div className="overview_title">
@@ -68,7 +70,7 @@ export default function ThisWebsite(props) {
 
 								<div className="project_img insight_img img_left">
 									<video autoPlay muted loop playsInline width="550px"> 
-										<source src={imageZoomDemo} type="video/mp4"/>
+										<source src={imageZoomDemo} onClick={handleImgClick} type="video/mp4"/>
 									</video>
 								</div>
 
@@ -93,7 +95,7 @@ export default function ThisWebsite(props) {
 								</div>
 
 								<div className="project_img insight_img img_right">
-									<img src={speedTest} alt="a screenshot of a website testing website's interface showing a score of 93 for my portfolio."/>
+									<img src={speedTest} onClick={handleImgClick} alt="a screenshot of a website testing website's interface showing a score of 93 for my portfolio."/>
 								</div>
 
 								<div className="project_insight">
@@ -104,7 +106,7 @@ export default function ThisWebsite(props) {
 								</div>
 
 								<div className="project_img insight_img img_left">
-									<img src={iconSet} alt="a list of the icons used in this site. The dribbble logo, an email icon, the git hub logo, generic website logo, a location icon, a phone icon, certificate icon, graduation cap icons, resume icon, and the linkedIn logo."/>
+									<img src={iconSet} onClick={handleImgClick} alt="a list of the icons used in this site. The dribbble logo, an email icon, the git hub logo, generic website logo, a location icon, a phone icon, certificate icon, graduation cap icons, resume icon, and the linkedIn logo."/>
 								</div>
 
 								<div className="project_insight insight_right">
@@ -115,7 +117,7 @@ export default function ThisWebsite(props) {
 								</div>
 
 								<div className="project_img insight_img img_right">
-									<img src={oldPortfolioDesign1} alt="The first interface for this website - a dark blue background with a large gummy candy in the shape of the letter C in the middle of the page."/>
+									<img src={oldPortfolioDesign1} onClick={handleImgClick} alt="The first interface for this website - a dark blue background with a large gummy candy in the shape of the letter C in the middle of the page."/>
 								</div>
 
 								<div className="project_insight">
@@ -126,7 +128,7 @@ export default function ThisWebsite(props) {
 								</div>
 								
 								<div className="project_img insight_img img_left">
-									<img src={oldPortfolioDesign2} alt="The second interface design for this site - a cream colored background with dark blue and red text with a large Light blue logo in the middle of the page."/>
+									<img src={oldPortfolioDesign2} onClick={handleImgClick} alt="The second interface design for this site - a cream colored background with dark blue and red text with a large Light blue logo in the middle of the page."/>
 								</div>
 
 								<div className="project_insight insight_right">

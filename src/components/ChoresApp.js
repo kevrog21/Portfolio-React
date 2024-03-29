@@ -8,7 +8,7 @@ import choresHero from '../media/to-do_mockup_purple_new.jpg'
 
 export default function ChoresApp(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")

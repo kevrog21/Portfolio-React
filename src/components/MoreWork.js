@@ -22,7 +22,12 @@ import beeArt from '../media/more_work/lizzie_bee2.png'
 
 import cabinArt from '../media/more_work/perspective_project.jpg'
 
-export default function MoreWork() {
+export default function MoreWork(props) {
+
+	const { setActiveNavItem, handleImgClick } = props
+
+	setActiveNavItem(1)
+
     return (
         <main>
 			<div className="above_fold_wrapper">
@@ -36,7 +41,7 @@ export default function MoreWork() {
 								
 							<div className="mw_image_grid">
 								<div className="mw_image_wrapper">
-									<img src={bathroomLavendarArt} alt="" className="mw_column_image"/>
+									<img src={bathroomLavendarArt} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -58,7 +63,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={cactiMockup} alt="" className="mw_column_image"/>
+									<img src={cactiMockup} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -74,7 +79,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={cakePopMockupBlue} alt="" className="mw_column_image"/>
+									<img src={cakePopMockupBlue} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -90,7 +95,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={watercolorBathArt} alt="" className="mw_column_image"/>
+									<img src={watercolorBathArt} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -112,7 +117,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={eurostileMockup} alt="" className="mw_column_image"/>
+									<img src={eurostileMockup} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -128,7 +133,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={drumsetSvg} alt="" className="mw_column_image"/>
+									<img src={drumsetSvg} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -144,7 +149,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={fantasyFootball} alt="" className="mw_column_image"/>
+									<img src={fantasyFootball} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -166,7 +171,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={mandalaShirt} alt="" className="mw_column_image"/>
+									<img src={mandalaShirt} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -182,7 +187,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={beeArt} alt="" className="mw_column_image"/>
+									<img src={beeArt} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">
@@ -198,7 +203,7 @@ export default function MoreWork() {
 									</div>
 								</div>
 								<div className="mw_image_wrapper">
-									<img src={cabinArt} alt="" className="mw_column_image"/>
+									<img src={cabinArt} onClick={handleImgClick} alt="" className="mw_column_image"/>
 								</div>
 								<div className="mw_insight_wrapper">
 									<div className="close_btn">

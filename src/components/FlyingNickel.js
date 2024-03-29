@@ -14,7 +14,7 @@ import fnPhone from '../media/FN_phone_mockup.jpg'
 
 export default function FlyingNickel(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -39,7 +39,7 @@ export default function FlyingNickel(props) {
 							<div className="project_content">
 								<div className="feature_overview_container">
 									<div  className="project_img feature_img">
-										<img src={flyingNickelHero} alt="hero image for my flying nickel logo design project; It shows a white logo that resembles the letter F in front of a blue purple background."/>
+										<img src={flyingNickelHero} onClick={handleImgClick} alt="hero image for my flying nickel logo design project; It shows a white logo that resembles the letter F in front of a blue purple background."/>
 									</div>
 									<div className="project_overview">
 										<div className="overview_title">
@@ -49,7 +49,7 @@ export default function FlyingNickel(props) {
 									</div>
 								</div>
 								<div className="project_img insight_img img_left">
-									<img src={flyingNickelCircuitLogo} alt="This image shows the logo in gray on a white background and gray circuit connections surrounding the logo."/>
+									<img src={flyingNickelCircuitLogo} onClick={handleImgClick} alt="This image shows the logo in gray on a white background and gray circuit connections surrounding the logo."/>
 								</div>
 
 								<div className="project_insight insight_right">
@@ -60,7 +60,7 @@ export default function FlyingNickel(props) {
 								</div>
 
 								<div className="project_img insight_img img_right">
-									<img src={fnBreakdown} alt="an image showing how the logo resembles different things like the letter F, a calendar and more by highlighting in bright green those shapes in the logo."/>
+									<img src={fnBreakdown} onClick={handleImgClick} alt="an image showing how the logo resembles different things like the letter F, a calendar and more by highlighting in bright green those shapes in the logo."/>
 								</div>
 
 								<div className="project_insight">
@@ -71,7 +71,7 @@ export default function FlyingNickel(props) {
 								</div>
 
 								<div className="project_img insight_img img_left">
-									<img src={fnWatch} alt="an upclose image of a smart watch with the logo on it."/>
+									<img src={fnWatch} onClick={handleImgClick} alt="an upclose image of a smart watch with the logo on it."/>
 								</div>
 
 								<div className="project_insight insight_right">
@@ -82,7 +82,7 @@ export default function FlyingNickel(props) {
 								</div>
 
 								<div className="project_img insight_img img_right">
-									<img src={fnSocial} alt="An image of a phone with the instagram interface on it and the flying nickel logo for a profile picture."/>
+									<img src={fnSocial} onClick={handleImgClick} alt="An image of a phone with the instagram interface on it and the flying nickel logo for a profile picture."/>
 								</div>
 
 								<div className="project_insight">
@@ -93,7 +93,7 @@ export default function FlyingNickel(props) {
 								</div>
 
 								<div className="project_img insight_img img_left">
-									<img src={fnCar} alt="A white mazda with the gray logo on the driver side door and pink circuit connections."/>
+									<img src={fnCar} onClick={handleImgClick} alt="A white mazda with the gray logo on the driver side door and pink circuit connections."/>
 								</div>
 
 								<div className="project_insight insight_right">
@@ -104,7 +104,7 @@ export default function FlyingNickel(props) {
 								</div>
 
 								<div className="project_img insight_img img_right">
-									<img src={fnPhone} alt="the grey logo on a mobile device."/>
+									<img src={fnPhone} onClick={handleImgClick} alt="the grey logo on a mobile device."/>
 								</div>
 
 								<div className="project_insight">

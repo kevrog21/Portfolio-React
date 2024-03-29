@@ -14,7 +14,7 @@ import { ReactComponent as SheepSvg } from './SheepSvg.svg'
 
 export default function DailyChecklist(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -39,7 +39,7 @@ export default function DailyChecklist(props) {
                             <div className="project_content">
                                 <div className="feature_overview_container">
                                     <div  className="project_img feature_img">
-                                        <img src={checklistHero} alt="Hero image for my checklist website project; It shows the desktop version of the website's interface which is a little farm illustration with a white form overlayed on top."/>
+                                        <img src={checklistHero} onClick={handleImgClick} alt="Hero image for my checklist website project; It shows the desktop version of the website's interface which is a little farm illustration with a white form overlayed on top."/>
                                     </div>
                                     <div className="project_overview">
                                         <div className="overview_title">
@@ -52,7 +52,7 @@ export default function DailyChecklist(props) {
 
                                 </div>
                                 <div className="project_img insight_img img_left">
-                                    <img src={checklistForm} alt="a closeup image of the form showing an incorrect entry into a form field and the form automatically asking the user to enter a valid value instead."/>
+                                    <img src={checklistForm} onClick={handleImgClick} alt="a closeup image of the form showing an incorrect entry into a form field and the form automatically asking the user to enter a valid value instead."/>
                                 </div>
 
                                 <div className="project_insight insight_right">
@@ -63,7 +63,7 @@ export default function DailyChecklist(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_right">
-                                    <img src={checklistResponsiveness} alt="a gif showing the responsiveness of the site on various screen sizes."/>
+                                    <img src={checklistResponsiveness} onClick={handleImgClick} alt="a gif showing the responsiveness of the site on various screen sizes."/>
                                 </div>
 
                                 <div className="project_insight">
@@ -74,7 +74,7 @@ export default function DailyChecklist(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_left">
-                                    <img src={checklistSky} alt="a gif demonstrating that the sun moves and the sky changes colors as the day progresses."/>
+                                    <img src={checklistSky} onClick={handleImgClick} alt="a gif demonstrating that the sun moves and the sky changes colors as the day progresses."/>
                                 </div>
 
                                 <div className="project_insight insight_right">
@@ -96,7 +96,7 @@ export default function DailyChecklist(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_left">
-                                    <img src={sheepLove} alt="an image of two of the sheep on the farm with a heart in between them."/>
+                                    <img src={sheepLove} onClick={handleImgClick} alt="an image of two of the sheep on the farm with a heart in between them."/>
                                 </div>
 
                                 <div className="project_insight insight_right">
@@ -107,7 +107,7 @@ export default function DailyChecklist(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_right">
-                                    <img src={checklistIcons} alt="an image of the icons used in the checklist site - a calendar floss dumbbell water glass wine glass bed shower head and phone."/>
+                                    <img src={checklistIcons} onClick={handleImgClick} alt="an image of the icons used in the checklist site - a calendar floss dumbbell water glass wine glass bed shower head and phone."/>
                                 </div>
 
                                 <div className="project_insight">

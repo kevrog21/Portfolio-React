@@ -4,7 +4,7 @@ import SideNav from './SideNav'
 
 export default function Header(props) {
 
-    const { scrollToSection, selectedSection, setSelectedSection, activeNavItem, setActiveNavItem } = props
+    const { scrollToSection, selectedSection, setSelectedSection, activeNavItem, setActiveNavItem, setActiveFullScreenImg } = props
 
     const [navMenuOpen, setNavMenuOpen] = useState(false)
     
@@ -98,6 +98,7 @@ export default function Header(props) {
     const handleNavLogoClick = () => {
         setActiveNavItem(0)
         setSelectedSection('above_fold')
+        setActiveFullScreenImg(false)
     }
 
     useEffect(() => {

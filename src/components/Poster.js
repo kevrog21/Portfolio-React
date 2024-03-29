@@ -14,7 +14,7 @@ import downArrows from '../media/arrows_down_orange.svg'
 
 export default function Poster(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -24,6 +24,8 @@ export default function Poster(props) {
     }, [])
 
     useIntersectionObserver(allInsightCards)
+
+    
 
     return (
         <main>
@@ -39,7 +41,10 @@ export default function Poster(props) {
                             <div className="project_content">
                                 <div className="feature_overview_container">
                                     <div  className="project_img feature_img">
-                                        <img src={posterMockup} alt="Hero image for my concert poster project; It shows a jazz orchestra concert promo poster placed on a wall. The poster shows two instruments standing like superheros atop a building with a red sky and moon behind them overlayed with black text that says A Night at The Movies. The main hero is a cello with a piano-key cape."/>
+                                        <img 
+                                            src={posterMockup} 
+                                            onClick={handleImgClick}
+                                            alt="Hero image for my concert poster project; It shows a jazz orchestra concert promo poster placed on a wall. The poster shows two instruments standing like superheros atop a building with a red sky and moon behind them overlayed with black text that says A Night at The Movies. The main hero is a cello with a piano-key cape."/>
                                     </div>
                                     <div className="project_overview">
                                         <div className="overview_title">
@@ -50,7 +55,7 @@ export default function Poster(props) {
                                     </div>
                                 </div>
                                 <div className="project_img insight_img medium_img img_left">
-                                    <img src={isolatedPoster} alt="an isolated vector image of the poster"/>
+                                    <img src={isolatedPoster} onClick={handleImgClick} alt="an isolated vector image of the poster"/>
                                 </div>
 
                                 <div className="project_insight insight_right tall_img">
@@ -61,7 +66,7 @@ export default function Poster(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_no_border zoom_background_light img_right">
-                                    <img src={displayType} alt="an isolated image of the font I used for the poster. It is a bold funky looking font called Gill Sans Ultra Bold."/>
+                                    <img src={displayType} onClick={handleImgClick} alt="an isolated image of the font I used for the poster. It is a bold funky looking font called Gill Sans Ultra Bold."/>
                                 </div>
 
                                 <div className="project_insight">
@@ -72,7 +77,7 @@ export default function Poster(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_no_border zoom_background_light img_left">
-                                    <img src={heroInstruments} alt="an isolated vector image of the two hero instruments, a cello and a saxaphone."/>
+                                    <img src={heroInstruments} onClick={handleImgClick} alt="an isolated vector image of the two hero instruments, a cello and a saxaphone."/>
                                 </div>
 
                                 <div className="project_insight insight_right">
@@ -83,7 +88,7 @@ export default function Poster(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_right">
-                                    <img src={conertProgram} alt="an image of the program that would be handed out at the concert."/>
+                                    <img src={conertProgram} onClick={handleImgClick} alt="an image of the program that would be handed out at the concert."/>
                                 </div>
 
                                 <div className="project_insight">
@@ -94,7 +99,7 @@ export default function Poster(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_left">
-                                    <img src={posterThreeColors} alt="an image of the poster in three different colors - yellow red and blue."/>
+                                    <img src={posterThreeColors} onClick={handleImgClick} alt="an image of the poster in three different colors - yellow red and blue."/>
                                 </div>
 
                                 <div className="project_insight insight_right">
@@ -105,7 +110,7 @@ export default function Poster(props) {
                                 </div>
 
                                 <div className="project_img insight_img medium_img zoom_background_light img_right">
-                                    <img src={alternatePoster} alt="an image of an alternate poster design; a black poster with 5 pink spotlights and instrument silhouettes in each spotlight."/>
+                                    <img src={alternatePoster} onClick={handleImgClick} alt="an image of an alternate poster design; a black poster with 5 pink spotlights and instrument silhouettes in each spotlight."/>
                                 </div>
 
                                 <div className="project_insight tall_img">
