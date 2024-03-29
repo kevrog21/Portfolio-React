@@ -21,6 +21,7 @@ export default function Poster(props) {
         if (insightCards.length > 0) {
             setAllInsightCards(insightCards)
         }
+        setActiveNavItem(1)
     }, [])
 
     useIntersectionObserver(allInsightCards)

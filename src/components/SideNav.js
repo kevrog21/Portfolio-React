@@ -2,7 +2,7 @@ import MobileNavLink from './MobileNavLink'
 
 export default function SideNav(props) {
 
-    const { navMenuOpen, setNavMenuOpen, showAndDisableSideNav, handleNavItemClick, scrollToSection, activeNavItem, setActiveNavItem, setSelectedSection } = props
+    const { navMenuOpen, setNavMenuOpen, showAndDisableSideNav, handleNavItemClick, scrollToSection, activeNavItem, setActiveNavItem, setSelectedSection, setActiveFullScreenImg } = props
 
     function closeNavMenu() {
         setNavMenuOpen(false)
@@ -19,6 +19,7 @@ export default function SideNav(props) {
                         setActiveNavItem={setActiveNavItem}
                         setSelectedSection={setSelectedSection}
                         handleNavItemClick={handleNavItemClick}
+                        setActiveFullScreenImg={setActiveFullScreenImg}
                         navIndex={0}
                     >
                         <li className={`${activeNavItem === 0 ? 'active' : ''}`}>
@@ -33,6 +34,7 @@ export default function SideNav(props) {
                         setActiveNavItem={setActiveNavItem}
                         setSelectedSection={setSelectedSection}
                         handleNavItemClick={handleNavItemClick}
+                        setActiveFullScreenImg={setActiveFullScreenImg}
                         navIndex={1}
                     >
                         <li className={`${activeNavItem === 1 ? 'active' : ''}`}>
@@ -47,6 +49,7 @@ export default function SideNav(props) {
                         setActiveNavItem={setActiveNavItem}
                         setSelectedSection={setSelectedSection}
                         handleNavItemClick={handleNavItemClick}
+                        setActiveFullScreenImg={setActiveFullScreenImg}
                         navIndex={2}
                     >
                         <li className={`${activeNavItem === 2 ? 'active' : ''}`}>

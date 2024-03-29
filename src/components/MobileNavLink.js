@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 
-export default function MobileNavLink({ to, sectionId, navIndex, setActiveNavItem, setSelectedSection, handleNavItemClick, children }) {
+export default function MobileNavLink({ to, sectionId, navIndex, setActiveNavItem, setSelectedSection, handleNavItemClick, setActiveFullScreenImg, children }) {
 
     const location = useLocation()
 
@@ -13,6 +13,7 @@ export default function MobileNavLink({ to, sectionId, navIndex, setActiveNavIte
                         console.log(sectionId, 'was clicked')
                         setActiveNavItem(navIndex)
                         setSelectedSection(sectionId)
+                        setActiveFullScreenImg(false)
                     }}
                 >{children}</NavLink>
                 :

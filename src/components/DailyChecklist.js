@@ -21,6 +21,7 @@ export default function DailyChecklist(props) {
         if (insightCards.length > 0) {
             setAllInsightCards(insightCards)
         }
+        setActiveNavItem(1)
     }, [])
 
     useIntersectionObserver(allInsightCards)
@@ -45,7 +46,7 @@ export default function DailyChecklist(props) {
                                         <div className="overview_title">
                                         Overview
                                         </div>
-                                            <p>My daily checklist website is a dynamic site that I built from scratch using php, html, css, and javascript. It tracks personal metrics that I think are important like how often I floss, exercise, sleep and others, and provides stats on the data. The appearance of the website changes based on user input and the time of day that the site is visited. It's also completely responsive and has some fun little easter eggs that I put in the UI. This project was great practice for database interactions, responsive design, and dynamic site building.</p>
+                                            <p>My daily checklist website is a dynamic site that I built from scratch using php, html, css, and javascript. It tracks personal metrics like how often I floss, exercise, sleep and others, and provides stats on the data. The appearance of the website changes based on user input and the time of day that the site is visited. It's also completely responsive and has some fun little easter eggs that I put in the UI. This project was great practice for database interactions, responsive design, and dynamic site building.</p>
                                         </div>
 
                                         {/* Check out a demo version of the site <a href="#">here</a>. */}

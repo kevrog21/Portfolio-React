@@ -21,12 +21,15 @@ import mandalaShirt from '../media/more_work/01_Front.jpg'
 import beeArt from '../media/more_work/lizzie_bee2.png'
 
 import cabinArt from '../media/more_work/perspective_project.jpg'
+import { useEffect } from 'react'
 
 export default function MoreWork(props) {
 
 	const { setActiveNavItem, handleImgClick } = props
 
-	setActiveNavItem(1)
+	useEffect(() => {
+		setActiveNavItem(1)
+	}, [])
 
     return (
         <main>

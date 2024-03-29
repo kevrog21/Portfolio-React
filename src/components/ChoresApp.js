@@ -15,6 +15,7 @@ export default function ChoresApp(props) {
         if (insightCards.length > 0) {
             setAllInsightCards(insightCards)
         }
+		setActiveNavItem(1)
     }, [])
 
     useIntersectionObserver(allInsightCards)
@@ -33,7 +34,7 @@ export default function ChoresApp(props) {
 							<div className="project_content">
 								<div className="feature_overview_container">
 									<div  className="project_img feature_img">
-										<img src={choresHero} alt="Hero image for my chore website interface; It shows a smaller version of the website's interface on a phone. The interface looks like a piece of binder paper with a blue typeface for the text that resemble a ball poiint pen writing."/>
+										<img src={choresHero} onClick={handleImgClick} alt="Hero image for my chore website interface; It shows a smaller version of the website's interface on a phone. The interface looks like a piece of binder paper with a blue typeface for the text that resemble a ball poiint pen writing."/>
 									</div>
 									<div className="project_overview">
 										<div className="overview_title">

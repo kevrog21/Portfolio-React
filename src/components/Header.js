@@ -12,16 +12,16 @@ export default function Header(props) {
 
     const location = useLocation()
 
-    useEffect(() => {
-        if (location.pathname !== '/') {
+    // useEffect(() => {
+    //     if (location.pathname !== '/') {
             
-            console.log('heres the active nav', activeNavItem)
-        }
+    //         console.log('heres the active nav', activeNavItem)
+    //     }
 
-        console.log('mounted component')
+    //     console.log('mounted component')
 
-        console.log(selectedSection)
-    }, [])
+    //     console.log(selectedSection)
+    // }, [])
 
     function showAndDisableSideNav() {
         const container = document.querySelector('.mobile_nav_container')
@@ -90,9 +90,11 @@ export default function Header(props) {
 
             window.location.href = '/'
             scrollToSection(sectionId)
+            setActiveFullScreenImg(false)
         }
         scrollToSection(sectionId)
         setNavMenuOpen(false)
+        setActiveFullScreenImg(false)
     }
 
     const handleNavLogoClick = () => {
@@ -168,6 +170,7 @@ export default function Header(props) {
                 setActiveNavItem={setActiveNavItem}
                 NavLinkToHome={NavLinkToHome}
                 setSelectedSection={setSelectedSection}
+                setActiveFullScreenImg={setActiveFullScreenImg}
             />
         </div>
     )

@@ -16,13 +16,12 @@ export default function ThisWebsite(props) {
 
     const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
 
-	setActiveNavItem(1)
-
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
         if (insightCards.length > 0) {
             setAllInsightCards(insightCards)
         }
+		setActiveNavItem(1)
     }, [])
 
     useIntersectionObserver(allInsightCards)
@@ -47,7 +46,7 @@ export default function ThisWebsite(props) {
 										<div className="overview_title">
 										Overview
 										</div>
-											<p>I coded this portfolio website as I was working my way through my frontend development certificate program. I used vanilla HTML, CSS, and Javascript to build it. The website turned out to be a great learning experience for me by putting the coding concepts I was learning to practical use in a real website. When I first started this project I had my graphic design work to display and now I’m adding more web development projects as I complete them.</p>
+											<p>I coded this portfolio website as I was working my way through my frontend development certificate program. I used vanilla HTML, CSS, and Javascript to build it originally, and refactored it in 2024 to React.js. The website turned out to be a great learning experience for me by putting the coding concepts I was learning to practical use in a real website. When I first started this project I had my graphic design work to display and now I’m adding more web development projects as I complete them.</p>
 										</div>
 
 										 {/* Check out a demo version of the site <a href="#">here</a>. */}
@@ -91,7 +90,7 @@ export default function ThisWebsite(props) {
 									<div className="insight_title">
 									2
 									</div>
-									<p>Many animations on this site are triggered by intersection observers such as the section headers on the homepage and the sliding text on this page. Before learning about intersection observers, I tried achieving this feature by using scroll event listeners that would check the page coordinates and then trigger the animations. It was horribly inefficient and a pain to implement. After learning about intersection observers, the site became much more functional and performant.</p>
+									<p>Many animations on this site are triggered by intersection observers.</p>
 								</div>
 
 								<div className="project_img insight_img img_right">
