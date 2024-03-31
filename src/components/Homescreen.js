@@ -72,7 +72,72 @@ export default function Homescreen(props) {
         scrollToSection(selectedSection)
         console.log('selected section', selectedSection)
 
+
+        const allSectionHeaders = document.querySelectorAll(".section_header")
+        const viewportWidth = window.innerWidth
+
+        let headerOptions = ''
+        if (viewportWidth > 600) {
+            headerOptions = { rootMargin: '100% 0px -91% 0px',}
+        } else {
+            headerOptions = { rootMargin: '100% 0px -92.5% 0px',}
+        }
+
+        const sectionObserver = new IntersectionObserver (function(entries, sectionObserver) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active_section")
+                } else {
+                    entry.target.classList.remove("active_section")
+                }
+            })
+        }, headerOptions)
+
+        allSectionHeaders.forEach(secHeader => {
+            sectionObserver.observe(secHeader)
+        })
+
+
     }, [])
+
+
+
+
+    // //intersection observer for section header style change on scroll
+    // const allSectionHeaders = document.querySelectorAll(".section_header")
+    // const viewportWidth = window.innerWidth
+    // //determine where the intersection observer should start based on nav/viewport height
+    // let headerOptions = ''
+    // if (viewportWidth > 600) {
+    //     headerOptions = { rootMargin: '100% 0px -91% 0px',}
+    // } else {
+    //     headerOptions = { rootMargin: '100% 0px -92.5% 0px',}
+    // }
+    
+    
+    // const sectionObserver = new IntersectionObserver (function(entries, sectionObserver) {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             entry.target.classList.add("active_section")
+    //         } else {
+    //             entry.target.classList.remove("active_section")
+    //         }
+    //     })
+    // }, headerOptions)
+    
+    // allSectionHeaders.forEach(secHeader => {
+    //     sectionObserver.observe(secHeader)
+    // })
+    
+
+
+
+
+
+
+
+
+
 
     return (
         <main className='no_padding'>
