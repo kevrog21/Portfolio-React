@@ -23,6 +23,7 @@ function App() {
 
   const [activeFullScreenImg, setActiveFullScreenImg] = useState(false)
   const [fullScreenImgUrl, setFullScreenImgUrl] = useState(null)
+  const [fullScreenVideoActive, setFullScreenVideoActive] = useState(false)
   const [lightBackground, setLightBackground] = useState(false)
 
   useEffect(() => {
@@ -94,6 +95,13 @@ function App() {
     }
 }
 
+const handleVideoClick = (event) => {
+  setFullScreenVideoActive(true)
+  const src = event.target.childNodes[0].src
+  setFullScreenImgUrl(src)
+  setActiveFullScreenImg(true)
+}
+
   return (
     <div className='App'>
       <Router>
@@ -111,6 +119,8 @@ function App() {
             key={fullScreenImgUrl}
             imgUrl={fullScreenImgUrl} 
             setActiveFullScreenImg={setActiveFullScreenImg}
+            fullScreenVideoActive={fullScreenVideoActive}
+            setFullScreenVideoActive={setFullScreenVideoActive}
             lightBackground={lightBackground}
           />}
         
@@ -165,6 +175,7 @@ function App() {
               allInsightCards={allInsightCards}
               setActiveNavItem={setActiveNavItem}
               handleImgClick={handleImgClick}
+              handleVideoClick={handleVideoClick}
             /> }
           />
           <Route exact path="/chores-app" element={

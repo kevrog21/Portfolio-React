@@ -14,7 +14,7 @@ import oldPortfolioDesign2 from '../media/old_portfolio_design_v2.jpg'
 
 export default function ThisWebsite(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick, handleVideoClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -68,8 +68,8 @@ export default function ThisWebsite(props) {
 						
 
 								<div className="project_img insight_img img_left">
-									<video autoPlay muted loop playsInline width="550px"> 
-										<source src={imageZoomDemo} onClick={handleImgClick} type="video/mp4"/>
+									<video autoPlay muted loop playsInline width="550px" onClick={handleVideoClick}> 
+										<source src={imageZoomDemo} type="video/mp4"/>
 									</video>
 								</div>
 
@@ -81,7 +81,7 @@ export default function ThisWebsite(props) {
 								</div>
 								
 								<div className="project_img insight_img img_right">
-									<video autoPlay muted loop playsInline width="550px"> 
+									<video autoPlay muted loop playsInline width="550px" onClick={handleVideoClick}> 
 										<source src={intersectionObserverDemo} type="video/mp4"/>
 									</video>
 								</div>

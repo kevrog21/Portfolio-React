@@ -1522,6 +1522,11 @@ footer {
 	.full_screen_img img{
 		height: 90%;
 	}
+
+	.full_screen_img video{
+		height: 90%;
+		width: 80%;
+	}
 	
 	
 }
@@ -1546,7 +1551,10 @@ footer {
 		width: 100%;
 	}
 	
-	
+	.full_screen_img video{
+		height: 90%;
+		width: 60%;
+	}
 	
 }
 	
