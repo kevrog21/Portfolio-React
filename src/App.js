@@ -24,7 +24,6 @@ function App() {
   const [activeFullScreenImg, setActiveFullScreenImg] = useState(false)
   const [fullScreenImgUrl, setFullScreenImgUrl] = useState(null)
   const [fullScreenVideoActive, setFullScreenVideoActive] = useState(false)
-  // const [fullScreenSvgActive, setFullScreenSvgActive] = useState(false)
   const [lightBackground, setLightBackground] = useState(false)
 
   useEffect(() => {
@@ -104,7 +103,6 @@ function App() {
   }
 
   const handleSvgClick = (event) => {
-    // setFullScreenSvgActive(true)
     setActiveFullScreenImg(true)
     setFullScreenImgUrl('svg')
     console.log('runnning svg')
@@ -129,8 +127,6 @@ function App() {
             setActiveFullScreenImg={setActiveFullScreenImg}
             fullScreenVideoActive={fullScreenVideoActive}
             setFullScreenVideoActive={setFullScreenVideoActive}
-            // fullScreenSvgActive={fullScreenSvgActive}
-            // setFullScreenSvgActive={setFullScreenSvgActive}
             lightBackground={lightBackground}
           />}
         
