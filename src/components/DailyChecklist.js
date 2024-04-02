@@ -14,7 +14,7 @@ import { ReactComponent as SheepSvg } from './SheepSvg.svg'
 
 export default function DailyChecklist(props) {
 
-    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick } = props
+    const { useIntersectionObserver, allInsightCards, setAllInsightCards, setActiveNavItem, handleImgClick, handleSvgClick } = props
 
     useEffect(() => {
         const insightCards = document.querySelectorAll(".project_insight")
@@ -86,7 +86,7 @@ export default function DailyChecklist(props) {
                                 </div>
 
                                 <div className="project_img insight_img img_right zoom_background_light">
-                                    <SheepSvg />
+                                    <SheepSvg onClick={handleSvgClick}/>
                                 </div>
 
                                 <div className="project_insight">

@@ -24,6 +24,7 @@ function App() {
   const [activeFullScreenImg, setActiveFullScreenImg] = useState(false)
   const [fullScreenImgUrl, setFullScreenImgUrl] = useState(null)
   const [fullScreenVideoActive, setFullScreenVideoActive] = useState(false)
+  // const [fullScreenSvgActive, setFullScreenSvgActive] = useState(false)
   const [lightBackground, setLightBackground] = useState(false)
 
   useEffect(() => {
@@ -93,14 +94,21 @@ function App() {
     } else {
         setLightBackground(false)
     }
-}
+  }
 
-const handleVideoClick = (event) => {
-  setFullScreenVideoActive(true)
-  const src = event.target.childNodes[0].src
-  setFullScreenImgUrl(src)
-  setActiveFullScreenImg(true)
-}
+  const handleVideoClick = (event) => {
+    setFullScreenVideoActive(true)
+    const src = event.target.childNodes[0].src
+    setFullScreenImgUrl(src)
+    setActiveFullScreenImg(true)
+  }
+
+  const handleSvgClick = (event) => {
+    // setFullScreenSvgActive(true)
+    setActiveFullScreenImg(true)
+    setFullScreenImgUrl('svg')
+    console.log('runnning svg')
+  }
 
   return (
     <div className='App'>
@@ -121,6 +129,8 @@ const handleVideoClick = (event) => {
             setActiveFullScreenImg={setActiveFullScreenImg}
             fullScreenVideoActive={fullScreenVideoActive}
             setFullScreenVideoActive={setFullScreenVideoActive}
+            // fullScreenSvgActive={fullScreenSvgActive}
+            // setFullScreenSvgActive={setFullScreenSvgActive}
             lightBackground={lightBackground}
           />}
         
@@ -166,6 +176,7 @@ const handleVideoClick = (event) => {
               allInsightCards={allInsightCards}
               setActiveNavItem={setActiveNavItem}
               handleImgClick={handleImgClick}
+              handleSvgClick={handleSvgClick}
             /> }
           />
           <Route exact path="/this-website" element={
