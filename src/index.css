@@ -52,6 +52,7 @@ h1 {
 }
 
 h2 {
+	font-family: 'passion_one_black', sans-serif;
 	color: #FF1C31;
 }
 
@@ -77,6 +78,7 @@ h3 {
 	border-bottom: 2px solid #000000;
 	width: 50%;
 	margin: 0 auto;
+	transition: all .5s ease;
 }
 
 /*---------end text styles-----------*/
@@ -443,9 +445,9 @@ header {
 	transition: all .5s ease;
 }
 
-.section_header p {
+/* .section_header p {
 	transition: all .5s ease
-}
+} */
 
 .header_margin {
 	margin: 5em 0 0 0;
@@ -1007,6 +1009,7 @@ footer {
 .active_section p {
 	text-shadow: none;
 	width: 100%;
+	transition: all .5s ease;
 }
 
 
@@ -1035,18 +1038,7 @@ footer {
 	}
 	
 	
-	.section_title {
-		width: auto;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-		font-size: 3rem;
-	/*	background: orange;*/
-		line-height: 3.5rem;
-		border: none;
-		display: inline-block;
-		text-align: start;
-		margin: 0 0 0 5rem;
-	}
+	
 	
 
 
@@ -1245,11 +1237,6 @@ footer {
 		height: 50%;
 		width: auto;
 		padding: 0 9% 0 0;
-	}
-	
-	.section_header {
-		position: sticky;
-		top: 8.5vh;
 	}
 	
 	
@@ -1503,16 +1490,45 @@ footer {
 	.copyright div {
 		padding-bottom: .25em;
 	}
-	
+
+	.section_header {
+		position: sticky;
+		top: 8.5vh;
+		width: 100%;
+	}
+
+	.section_title_container {
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	.section_title {
+		width: auto;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		font-size: 3rem;
+		line-height: 3.5rem;
+		border: none;
+		display: inline-block;
+		text-align: start;
+		margin: 0 0 0 0;
+		padding: .5rem 5rem;
+		transition: all .5s ease;
+	}
+
+	.active_section .section_title {
+		width: auto;
+		transform: translateX(calc(45vw - 50%))
+	}
 	
 	.active_section {
 		width: 100%;
 		border-bottom: 2px solid #000000;
-		
 	}
 	
 
-	.active_section p {
+	/* .active_section p {
 		width: auto;
 		display: inline-block;
 		text-shadow: none;
@@ -1520,7 +1536,7 @@ footer {
 		left: 50%;
 		transform: translateX(-50%);
 		margin: 0;
-	}
+	} */
 	
 	.full_screen_img {
 		padding: 9vh 0 0 0;
@@ -1618,6 +1634,7 @@ footer {
 }
 
 .project_heading {
+	font-family: 'passion_one_black', sans-serif;
 	background: #E8D9C4;
 	padding: 1em 0;
 	width: 160%;

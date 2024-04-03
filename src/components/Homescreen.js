@@ -206,7 +206,9 @@ export default function Homescreen(props) {
             <section id="project_section"  className="bkgd_secondary" >
                 <div className="section_header bkgd_secondary content_wrapper">
                     <div className="header_margin">
-                        <p className="section_title">PROJECTS</p>
+                        <div className="section_title_container">
+                            <p className="section_title">PROJECTS</p>
+                        </div>
                     </div>
                 </div>
                 <div className="projects_wrapper content_wrapper bkgd_secondary flex">
@@ -289,7 +291,9 @@ export default function Homescreen(props) {
             <section id="about_section">
                 <div className="section_header bkgd_primary content_wrapper">
                     <div className="header_margin">
-                        <p className="section_title">ABOUT ME</p>
+                        <div className="section_title_container">
+                            <p className="section_title">ABOUT ME</p>
+                        </div>
                     </div>
                 </div>
                 <div className="about_wrapper content_wrapper">
