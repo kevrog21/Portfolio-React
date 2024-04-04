@@ -5,6 +5,20 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "passion_one_bold";
+	src: url(./PassionOne-Bold.ttf) format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "passion_one_regular";
+	src: url(./PassionOne-Regular.ttf) format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -52,7 +66,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'passion_one_black', sans-serif;
+	font-family: 'passion_one_bold', sans-serif;
 	color: #FF1C31;
 }
 
@@ -62,7 +76,6 @@ h3 {
 }
 
 .nav_name {
-	font-family: 'Passion One', cursive;
 	font-size: 2.5rem;
 }
 
@@ -1519,7 +1532,7 @@ footer {
 
 	.active_section .section_title {
 		width: auto;
-		transform: translateX(calc(45vw - 50%))
+		transform: translateX(calc(45vw - 52%))
 	}
 	
 	.active_section {
@@ -1569,6 +1582,15 @@ footer {
 	.achievement p {
 		width: 70%;
 		text-align: center;
+	}
+
+	.section_title_container {
+		width: 100%;
+	}
+
+	.active_section .section_title {
+		width: auto;
+		transform: translateX(calc(50vw - 52.25%))
 	}
 	
 	.active_section {
@@ -1634,7 +1656,6 @@ footer {
 }
 
 .project_heading {
-	font-family: 'passion_one_black', sans-serif;
 	background: #E8D9C4;
 	padding: 1em 0;
 	width: 160%;
@@ -1647,7 +1668,7 @@ footer {
 	text-stroke: 2px #000;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 4rem;
 	padding: 0 0 0 25%;
 /*	background: orange;*/
@@ -1774,7 +1795,7 @@ footer {
 }
 
 .insight_title {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 3rem;
 	color: #CEB997;
 	padding: .25em 0;
@@ -1816,7 +1837,7 @@ footer {
 }
 
 .more_work_title {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 2rem;
 	border-bottom: 2px solid #000;
 	margin: .5em 0;
@@ -1851,7 +1872,7 @@ footer {
 
 .more_work_left p,
 .more_work_right p {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 2rem;
 	line-height: 2rem;
 	width: 100%;
@@ -1922,7 +1943,7 @@ footer {
 
 
 .mw_title {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	width: 100%;
 	text-align: center;
 	font-size: 2rem;
@@ -2044,7 +2065,7 @@ footer {
 }
 
 .more_work_title {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 2rem;
 	border-bottom: 2px solid #000;
 	margin: .5em 0;
@@ -2079,7 +2100,7 @@ footer {
 
 .more_work_left p,
 .more_work_right p {
-	font-family: 'Passion One', cursive;
+	font-family: 'passion_one_regular', sans-serif;
 	font-size: 2rem;
 	line-height: 2rem;
 	width: 100%;
@@ -2227,7 +2248,7 @@ footer {
 		text-stroke: 2px #000;
 		letter-spacing: 2px;
 		text-transform: uppercase;
-		font-family: 'Passion One', cursive;
+		font-family: 'passion_one_regular', sans-serif;
 		font-size: 4vw;
 		padding: .5rem 0;
 		max-width: 65%;
