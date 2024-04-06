@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     if (fullScreenImgUrl) {
-      console.log('this url should be showing ', fullScreenImgUrl)
       setActiveFullScreenImg(true)
     }
   }, [fullScreenImgUrl])
@@ -45,9 +44,6 @@ function App() {
     const section = document.getElementById(sectionId)
     if (section) {
       section.scrollIntoView({behavior: 'smooth'})
-      console.log(section)
-    } else {
-      console.log('that section isnt painted to screen')
     }
   }
 
@@ -105,7 +101,6 @@ function App() {
   const handleSvgClick = (event) => {
     setActiveFullScreenImg(true)
     setFullScreenImgUrl('svg')
-    console.log('runnning svg')
   }
 
   return (

@@ -10,7 +10,6 @@ export default function MobileNavLink({ to, sectionId, navIndex, setActiveNavIte
                     to={to}
                     className="m_nav_item"
                     onClick={() => {
-                        console.log(sectionId, 'was clicked')
                         setActiveNavItem(navIndex)
                         setSelectedSection(sectionId)
                         setActiveFullScreenImg(false)

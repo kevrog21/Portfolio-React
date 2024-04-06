@@ -8,20 +8,7 @@ export default function Header(props) {
 
     const [navMenuOpen, setNavMenuOpen] = useState(false)
     
-    
-
     const location = useLocation()
-
-    // useEffect(() => {
-    //     if (location.pathname !== '/') {
-            
-    //         console.log('heres the active nav', activeNavItem)
-    //     }
-
-    //     console.log('mounted component')
-
-    //     console.log(selectedSection)
-    // }, [])
 
     function showAndDisableSideNav() {
         const container = document.querySelector('.mobile_nav_container')
@@ -33,14 +20,12 @@ export default function Header(props) {
                 container.classList.add('show')
                 navMenu.classList.add('slide')
                 mainEl.classList.add('disable-pointer-events')
-                // document.documentElement.style.overflow = 'hidden'
                 document.body.style.overflow = 'hidden'
                 
             } else {
                 container.classList.remove('show')
                 navMenu.classList.remove('slide')
                 mainEl.classList.remove('disable-pointer-events')
-                // document.documentElement.style.overflow = ''
                 document.body.style.overflow = 'auto'
             }
         }
@@ -53,7 +38,6 @@ export default function Header(props) {
                     to={to}
                     className={`nav_item ${activeNavItem === navIndex ? 'active' : ''}`}
                     onClick={() => {
-                        console.log(sectionId, 'was clicked')
                         setActiveNavItem(navIndex)
                         setSelectedSection(sectionId)
                     }}
@@ -71,30 +55,13 @@ export default function Header(props) {
         )
     }
 
-    // const handleNavItemClick = (sectionId) => {
-    //     if (location.pathname !== '/') {
-    //         setTimeout(() => {
-    //             window.location.href = '/'
-    //             window.addEventListener('popstate', () => {
-    //                 scrollToSection(sectionId)
-    //             })
-    //         }, 0)
-    //     } else {
-    //         scrollToSection(sectionId)
-    //     }
-    //     setNavMenuOpen(false)
-    // }
-
     const handleNavItemClick = (sectionId) => {
         if (location.pathname !== '/') {
-
             window.location.href = '/'
             scrollToSection(sectionId)
-            setActiveFullScreenImg(false)
         }
         scrollToSection(sectionId)
         setNavMenuOpen(false)
-        setActiveFullScreenImg(false)
     }
 
     const handleNavLogoClick = () => {

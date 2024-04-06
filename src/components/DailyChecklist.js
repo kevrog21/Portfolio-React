@@ -133,7 +133,6 @@ export default function DailyChecklist(props) {
                                         </Link>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 

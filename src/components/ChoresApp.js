@@ -44,7 +44,6 @@ export default function ChoresApp(props) {
 										</div>
 								</div>
 
-
 								<div className="more_work">
 									<div className="more_work_title">
 									More Work

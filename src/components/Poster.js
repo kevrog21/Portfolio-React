@@ -26,8 +26,6 @@ export default function Poster(props) {
 
     useIntersectionObserver(allInsightCards)
 
-    
-
     return (
         <main>
 			<div className="above_fold_wrapper">
@@ -136,7 +134,6 @@ export default function Poster(props) {
                                         </Link>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 

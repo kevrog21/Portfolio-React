@@ -28,8 +28,6 @@ export default function Homescreen(props) {
         const mobileNavList = document.querySelectorAll(".m_nav_item")
         const abvFoldArrows = document.querySelector(".downward_arrows2")
 
-        console.log( 'mobile nav list here : ', mobileNavList)
-
         const topOptions = {
             threshold: .4,
         }
@@ -44,7 +42,6 @@ export default function Homescreen(props) {
                         mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
                         mobileNavList[0].firstElementChild.classList.add("active")
                         abvFoldArrows.classList.remove("fade")
-                        console.log('running intersection observer')
                     } else if (entry.target.id === "project_section") {
                         setActiveNavItem(1)
                         navElementsArray.forEach(item => item.classList.remove("active"))
@@ -52,14 +49,12 @@ export default function Homescreen(props) {
                         abvFoldArrows.classList.add("fade")
                         mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
                         mobileNavList[1].firstElementChild.classList.add("active")
-                        console.log('running intersection observer')
                     } else if (entry.target.id === "about_section") {
                         setActiveNavItem(2)
                         navElementsArray.forEach(item => item.classList.remove("active"))
                         navElementsArray[2].classList.add("active")
                         mobileNavList.forEach(item => item.firstElementChild.classList.remove("active"))
                         mobileNavList[2].firstElementChild.classList.add("active")
-                        console.log('running intersection observer')
                     }
                 }
             })
@@ -70,8 +65,6 @@ export default function Homescreen(props) {
         })
 
         scrollToSection(selectedSection)
-        console.log('selected section', selectedSection)
-
 
         const allSectionHeaders = document.querySelectorAll(".section_header")
         const viewportWidth = window.innerWidth
@@ -96,48 +89,7 @@ export default function Homescreen(props) {
         allSectionHeaders.forEach(secHeader => {
             sectionObserver.observe(secHeader)
         })
-
-
     }, [])
-
-
-
-
-    // //intersection observer for section header style change on scroll
-    // const allSectionHeaders = document.querySelectorAll(".section_header")
-    // const viewportWidth = window.innerWidth
-    // //determine where the intersection observer should start based on nav/viewport height
-    // let headerOptions = ''
-    // if (viewportWidth > 600) {
-    //     headerOptions = { rootMargin: '100% 0px -91% 0px',}
-    // } else {
-    //     headerOptions = { rootMargin: '100% 0px -92.5% 0px',}
-    // }
-    
-    
-    // const sectionObserver = new IntersectionObserver (function(entries, sectionObserver) {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             entry.target.classList.add("active_section")
-    //         } else {
-    //             entry.target.classList.remove("active_section")
-    //         }
-    //     })
-    // }, headerOptions)
-    
-    // allSectionHeaders.forEach(secHeader => {
-    //     sectionObserver.observe(secHeader)
-    // })
-    
-
-
-
-
-
-
-
-
-
 
     return (
         <main className='no_padding'>
@@ -329,12 +281,11 @@ export default function Homescreen(props) {
                                 <div className="img_box">
                                     <img className="ach_img" src={marketingIcon} alt="black vector image of a graduation cap sitting on top of the letters B and S"/>
                                 </div>
-                                <p>Bachelor’s degree in marketing</p>
+                                <p>Bachelor's degree in marketing</p>
                             </div> 
                         </div>
                     </div>
                 </div>  
-
             </section>
         </main>
     )
